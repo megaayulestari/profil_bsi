@@ -6,10 +6,12 @@
     <!-- initial-scale=1.0mengatur tingkat zoom awal saat halaman pertama kali dimuat oleh browser. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poltekkes BSI</title>
+    <!-- alamat file dari css yg dibuat oleh si tailwind -->
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body>
     <!-- bagian awal header -->
+    <!-- untuk pengganti grid, saya menggunakan flex agar lebih flexible ukurannya ketika mengecil/menyusut -->
     <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
         <div class="container">
             <div class="flex items-center justify-between relative">
@@ -17,13 +19,14 @@
                     <a href="#home" class="font-bold text-lg text-primary block py-6" >poltekkes_bsi</a>
                 </div>
                 <div class="flex items-center px-4">
-                    <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
-                        <span class="hamburger-line transision duration-300 ease-in-out origin-top-left"></span> <!-- sumbu putar dari kiri atas -->
-                        <span class="hamburger-line transision duration-300 ease-in-out"></span>
-                        <span class="hamburger-line transision duration-300 ease-in-out origin-bottom-left"></span> <!-- sumbu putar dari kiri bawah -->
+                    <!-- membuat button bentuk hamburger line -->
+                    <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden"> <!-- ketika large, hamburger akan disembunyikan dan nav tampil seperti biasa-->
+                        <span class="hamburger-line transision duration-300 ease-in-out origin-top-left"></span> <!-- origin-top-left : sumbu putar dari kiri atas -->
+                        <span class="hamburger-line transision duration-300 ease-in-out"></span> <!-- class hamburger-line dibuat di file script.js dan input.css -->
+                        <span class="hamburger-line transision duration-300 ease-in-out origin-bottom-left"></span> <!-- origin-bottom-left : sumbu putar dari kiri bawah -->
                     </button>
 
-                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"> <!-- nav jika discrol akan static dan mengikuti scroll -->
                         <ul class="block lg:flex">
                             <li class="group">
                                 <a href="index.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Beranda</a>
@@ -49,7 +52,7 @@
     <section id="home" class="pt-36">
         <div class="container">
             <div class="flex flex-wrap ">
-                <div class="w-full self-center px-4 lg:w-1/2">
+                <div class="w-full self-center px-4 lg:w-1/2"> <!-- jika large lebar berubah jadi 1/2, sehingga akan menjadi 2 bagian -->
                     <h1 class="text-base font-semibold text-primary md:text-xl">Selamat datang &#128075; di <span class="block font-bold text-dark text-3xl lg:text-4xl mt-1">Politeknik Kesehatan Bhakti Setya Indonesia</span></h1>
                     <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">"Your Bright Future, Starts Here"</h2>
                     <p class="font-medium text-secondary mb-10 leading-relaxed">Terakreditasi <span class="text-slate-500 ">"Baik Sekali"</span></p>
@@ -210,8 +213,8 @@
                     <p>Jalan Purwanggan No. 35, Purwokinanti, Pakualaman</p>
                     <p>Yogyakarta</p>
                 </div>
-                <div class="w-full px-4 mb-12 text-slate-300 md:w-1/3">
-                    <h3 class="font-semibold text-xl text-white mb-5">Program Studi</h3>
+                <div class="w-full px-4 mb-12 text-slate-300 md:w-1/3 ">
+                    <h3 class="font-semibold text-xl text-white mb-5 ">Program Studi</h3>
                     <ul>
                         <li>
                             <a href="#" class="inline-block text-base hover:text-primary mb-3">D3 Farmasi</a>
@@ -277,6 +280,8 @@
         </div>
     </footer>
     <!-- bagian akhir footer -->
+
+<!-- link memanggil file javascript -->
 <script src="dist/js/script.js"></script>
 </body>
 </html>
